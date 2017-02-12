@@ -26,6 +26,7 @@ module.exports = {
       template: 'app/index.tpl.html',
       inject: 'body',
       filename: 'index.html',
+      baseUrl: '/',
       date: moment().format("dddd, MMMM Do YYYY, h:mm:ss a"),
       version: require("./package.json").version,
       hash: gitRev.version()
@@ -34,7 +35,8 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin(),
     new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify('development')
+      'process.env.NODE_ENV': JSON.stringify('development'),
+      'process.env.BASE_URL': '/',
     })
   ],
   eslint: {

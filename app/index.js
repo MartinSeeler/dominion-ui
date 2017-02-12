@@ -9,7 +9,9 @@ import './styles/main.scss';
 import {createHistory} from 'history';
 import {useRouterHistory} from 'react-router';
 
-const browserHistory = useRouterHistory(createHistory)();
+const browserHistory = useRouterHistory(createHistory)({
+  basename: process.env.BASE_URL
+});
 const store = configureStore({}, browserHistory);
 const history = syncHistoryWithStore(browserHistory, store);
 

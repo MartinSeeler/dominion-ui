@@ -35,6 +35,7 @@ module.exports = {
       template: 'app/index.tpl.html',
       inject: 'body',
       filename: 'index.html',
+      baseUrl: '/dominion-ui/',
       date: moment().format("dddd, MMMM Do YYYY, h:mm:ss a"),
       version: require("./package.json").version,
       hash: gitRev.version()
@@ -51,7 +52,8 @@ module.exports = {
     }),
     // plugin for passing in data to the js, like what NODE_ENV we are in.
     new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify('production')
+      'process.env.NODE_ENV': JSON.stringify('production'),
+      'process.env.BASE_URL': '/dominion-ui/'
     }),
     new CompressionPlugin({
       asset: "[path].gz[query]",
