@@ -54,7 +54,7 @@ module.exports = {
     // plugin for passing in data to the js, like what NODE_ENV we are in.
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('production'),
-      'process.env.BASE_URL': '/dominion-ui'
+      'process.env.BASE_URL': JSON.stringify('/dominion-ui')
     }),
     new CompressionPlugin({
       asset: "[path].gz[query]",

@@ -36,7 +36,7 @@ module.exports = {
     new webpack.NoErrorsPlugin(),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('development'),
-      'process.env.BASE_URL': '/',
+      'process.env.BASE_URL': JSON.stringify('/'),
     })
   ],
   eslint: {
