@@ -20,7 +20,8 @@ module.exports = {
   // Where you want the output to go
   output: {
     path: path.join(__dirname, '/dist'),
-    filename: '[name]-[hash].min.js.gz'
+    filename: '[name]-[hash].min.js.gz',
+    publicPath: '/dominion-ui'
   },
   plugins: [
     // webpack gives your modules and chunks ids to identify them. Webpack can vary the
