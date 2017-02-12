@@ -49,11 +49,6 @@ module.exports = {
         screw_ie8: true
       }
     }),
-    // creates a stats.json
-    new StatsPlugin('webpack.stats.json', {
-      source: false,
-      modules: false
-    }),
     // plugin for passing in data to the js, like what NODE_ENV we are in.
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('production')
